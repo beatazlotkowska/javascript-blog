@@ -8,6 +8,7 @@
 // const links = document.querySelectorAll('.titles a');
 
 const titleClickHandler = function(event){
+	event.preventDefault();
 	const clickedElement = this;
 	console.log('Link was clicked!');
 	console.log(event);
@@ -30,11 +31,13 @@ const titleClickHandler = function(event){
 	 }  
 
 	/* get 'href' attribute from the clicked link */
+	const href = clickedElement.getAttribute('href');
+
 
 	/* find the correct article using the selector (value of 'href' attribute) */
-
+	const correctArticle = document.querySelector(href);
 	/* add class 'active' to the correct article */
-	
+	correctArticle.classList.add('active');
 	
 }
 
