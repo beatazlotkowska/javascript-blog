@@ -8,8 +8,9 @@
     "init:dirs": "mkdirp sass css vendor images js",
     "init:files": "touch README.md index.html sass/style.scss js/script.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
-    "test": "npm run test:html",
+    "test": "npm run test:*",
     "test:html": "html-validate *.html",
+    "test:js": "eslint js/",
     "build": "npm-run-all build:* test",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "autoprefixer-cli": "^1.0.0",
     "browser-sync": "^2.26.13",
+    "eslint": "^7.16.0",
     "html-validate": "^4.0.2",
     "mkdirp": "^1.0.4",
     "node-sass": "^5.0.0",
